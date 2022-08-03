@@ -13,9 +13,10 @@ jobs:
         run: echo "Hello World"
       - name: multiline script
         run: |
+          apt-get update -y
           node -v
           npm -v
-          script-typo
+          
           
 
 
