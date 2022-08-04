@@ -6,7 +6,7 @@ on: [push]
 
 # list the jobs/objects
 jobs:
-  run-shell-command:
+  run-shell-python-commands:
     runs-on: ubuntu-latest
     steps:   # this is an array
       - name: echo a string
@@ -18,7 +18,7 @@ jobs:
       - name: python commands
         run: |
           import platform
-          print(platform.processor)
+          print(platform.processor())
         shell: python
           
           
