@@ -15,6 +15,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install nginx
+      - name: python commands
+        run: |
+          import platform
+          print(platform.processor)
+        shell: python
           
           
           
