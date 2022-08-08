@@ -3,7 +3,11 @@ name: Action Workflows
 #on: [push, pull_request]
 # the event can also be coded as an array
 on:
-  push:
+# setting schedule tim
+  schedule:
+    - cron: "30 4 * * *"
+    - cron: "30 16 * * *"
+  #push:
   pull_request:
     types: [closed, assigned, reopened, opened]
 
