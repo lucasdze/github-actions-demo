@@ -7,10 +7,22 @@ on:
   schedule:
     - cron: "30 4 * * *"
     - cron: "30 16 * * *"
-  #push:
+  push:
+    branches:   # or branches-ignore to run on all branches except the listed ones here. 
+                #NB both ant be used at the same time but uou van exclude a specific branch by using !
+      - develop
+      - '!feature/deploy-in-test-env'
   pull_request:
     types: [closed, assigned, reopened, opened]
-
+    branches:
+      - develop
+      - main
+      - 'feature/*'  # mathes feature/abc, feature/featurename...
+      - 'feature/**'  # matches feature/abc/efg
+    tags:   # works the same as branches with tags-ignore & !
+      - v1.*
+    paths: # can be set for ex to run any time we change a specific file/script. works the same as branches with paths-ignore & !
+      - '**.sh'
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
