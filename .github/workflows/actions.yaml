@@ -18,12 +18,12 @@ jobs:
           echo "${{ github.token }}"
         #git clone git@github:$GITHUB_REPOSITORY
         # git checkout $GITHUB_SHA
-      # Let's automatically clone a repos in our working env
+        # Let's automatically clone a repos in our working env
       - name: Checkout
         uses: actions/checkout@v1
         # we can also manually code this step using commit ID & Token
       
-      - name: List Files after Checkout
+      - name: List Files after Checkout step
         run: |
           pwd
           ls -a
