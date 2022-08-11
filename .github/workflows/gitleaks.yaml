@@ -1,6 +1,6 @@
 name: gitleaks
 
-on: [push,]
+on: [push]
 
 jobs:
   gitleaks:

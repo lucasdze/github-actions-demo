@@ -2,7 +2,7 @@
 name: shell commands
 
 # define the event
-on: [pull_request]
+on: [push]
 
 # list the jobs/objects
 jobs:  # each job runs in parallel on the virtual machine by default
