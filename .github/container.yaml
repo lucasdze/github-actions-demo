@@ -12,4 +12,5 @@ jobs:
         run: |
           node -v
           cat /etc/os-release
+          uname -r
 
