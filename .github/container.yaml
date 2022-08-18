@@ -1,0 +1,15 @@
+name: container
+
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:  # We can add under conatiner: image, volume, ports, env, options
+      image: node:18-alpine3.15
+    steps:
+      - name: Log node version
+        run: |
+          node -v
+          cat /etc/os-release
+
