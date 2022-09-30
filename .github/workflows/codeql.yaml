@@ -3,10 +3,12 @@ name: "Running CodeQL Analysis scan"
 on:
   push:
     branches:
-      - "develop"
+      - develop
+      - master
   pull_request:
     branches:
       - master
+      - develop
     
 
 
