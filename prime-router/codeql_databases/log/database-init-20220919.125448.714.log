@@ -1,0 +1,110 @@
+[2022-09-19 12:54:48] This is codeql database init --db-cluster codeql_databases --source-root=. --language=java
+[2022-09-19 12:54:48] Log file was started late.
+[2022-09-19 12:54:48] [PROGRESS] database init> Counting lines of code in C:\Users\58917\workspace\CDC\prime-reportstream\prime-router
+[2022-09-19 12:54:50] [PROGRESS] database init> Resolving extractor java.
+[2022-09-19 12:54:50] Calling plumbing command: codeql resolve languages --format=json
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from C:\Users\58917\codeql\.codeqlmanifest.json
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\cpp\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\csharp\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\csv\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\go\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\html\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\java\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\javascript\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\properties\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\python\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\ruby\codeql-extractor.yml.
+[2022-09-19 12:54:51] [DETAILS] resolve languages> Parsing C:\Users\58917\codeql\xml\codeql-extractor.yml.
+[2022-09-19 12:54:51] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "cpp" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\cpp"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\go"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\html"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\properties"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\python"
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\ruby"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "C:\\Users\\58917\\codeql\\xml"
+                            }
+                          ]
+                        }
+                      }
+[2022-09-19 12:54:51] [DETAILS] database init> Found candidate extractor root for java: C:\Users\58917\codeql\java.
+[2022-09-19 12:54:51] [PROGRESS] database init> Successfully loaded extractor Java (java) from C:\Users\58917\codeql\java.
+[2022-09-19 12:54:51] [PROGRESS] database init> Created skeleton CodeQL database at C:\Users\58917\workspace\CDC\prime-reportstream\prime-router\codeql_databases\java. This in-progress database is ready to be populated by an extractor.
+[2022-09-19 12:54:51] Terminating normally.
