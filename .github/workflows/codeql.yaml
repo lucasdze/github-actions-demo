@@ -7,7 +7,7 @@ on:
   #     - codeql-scan
   pull_request:
     branches:
-      - codeql-scan
+      #- codeql-scan
       - develop    
 
 
