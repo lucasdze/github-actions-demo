@@ -1,0 +1,59 @@
+name: Action Workflows
+
+#on: [push, pull_request]
+# the event can also be coded as an array
+on:
+# setting schedule tim
+  schedule:
+    - cron: "30 4 * * *"
+    - cron: "30 16 * * *"
+  push:
+    branches:   # or branches-ignore to run on all branches except the listed ones here. 
+                #NB both ant be used at the same time but uou van exclude a specific branch by using !
+      - develop
+      - '!feature/deploy-in-test-env'
+  pull_request:
+    types: [closed, assigned, reopened, opened]
+    branches:
+      - develop
+      - main
+      - 'feature/*'  # mathes feature/abc, feature/featurename...
+      - 'feature/**'  # matches feature/abc/efg
+    tags:   # works the same as branches with tags-ignore & !
+      - v1.*
+    paths: # can be set for ex to run any time we change a specific file/script. works the same as branches with paths-ignore & !
+      - '**.sh'
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: Set ENV
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+        #git clone git@github:$GITHUB_REPOSITORY
+        # git checkout $GITHUB_SHA
+        # Let's automatically clone a repos in our working env
+      - name: Checkout
+        uses: actions/checkout@v1
+        # we can also manually code this step using commit ID & Token
+      
+      - name: List Files after Checkout step
+        run: |
+          pwd
+          ls -a
+      - name: Simple Javascript Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1 # can use @branch, versionId or commit (commitId is the safest way)
+        with:
+          who-to-greet: Lucas
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
+
+        
