@@ -1,6 +1,7 @@
 name: "Running CodeQL Analysis scan"
 
 on: [push, pull_request]
+
   # push:
   #   branches:
   #     - develop
