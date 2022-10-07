@@ -1,14 +1,14 @@
 name: "Running CodeQL Analysis scan"
 
-on:
-  push:
-    branches:
-      - develop
-      - codeql-scan
-  pull_request:
-    branches:
-      - codeql-scan
-      - develop    
+on: [push, pull_request]
+  # push:
+  #   branches:
+  #     - develop
+  #     - codeql-scan
+  # pull_request:
+  #   branches:
+  #     - codeql-scan
+  #     - develop    
 
 
 jobs:
